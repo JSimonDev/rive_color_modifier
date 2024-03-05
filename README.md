@@ -1,8 +1,6 @@
 # Rive Color Modifier
 
-This package provides an easy and straightforward way to modify the Color of specific components within [Rive](https://rive.app/) animations at runtime, while also maintaining their opacity (alpha values) throughout the animation.
-
-### If you like this package, please leave a like on [pub.dev](https://pub.dev/packages/rive_color_modifier) and star on [GitHub](https://jsimon.dev/)
+This package provides an easy and straightforward way to modify the Color of specific Components within [Rive](https://rive.app/) Animations at runtime, while also maintaining their opacity (alpha values) throughout the animation.
 
 ## Features
 
@@ -45,7 +43,7 @@ RiveColorModifier(
 
 ## Additional information
 
-For more information on how to use this package, or if you want to contribute, please visit the [GitHub repository](https://jsimon.dev/). If you encounter any issues or have feature requests, please file them in the issue tracker.
+For more information on how to use this package, or if you want to contribute, please visit the [GitHub repository](https://github.com/JSimonDev/rive_color_modifier). If you encounter any issues or have feature requests, please file them in the issue tracker.
 
 Don't forget to like the package if you find it useful, and if you have any suggestion, please let me know.
 
