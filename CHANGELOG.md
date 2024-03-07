@@ -1,6 +1,10 @@
 # CHANGELOG
 
-## 1.0.0 - Release Date
+## 1.0.1 - Example added
+
+- You can find a simple demo in the "example" folder
+
+## 1.0.0 - Basic functionality
 
 ### Added
 

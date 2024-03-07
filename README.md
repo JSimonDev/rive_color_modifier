@@ -2,11 +2,9 @@
 
 This package provides an easy and straightforward way to modify the Color of specific Components within [Rive](https://rive.app/) Animations at runtime, while also maintaining their opacity (alpha values) throughout the animation.
 
-## Features
+## Preview
 
-- **RiveColorComponent**: Enables dynamic color application and manipulation within Rive animations, providing a robust toolset for developers to control the color properties effectively.
-
-- **RiveColorModifier**: A focused utility to modify and adjust colors within Rive animations, allowing for precise and detailed color transformations.
+<video controls poster="screenshots/rive_color_modifier_poster.png" src="screenshots/rive_color_modifier_example.mp4" title="Rive Color Modifier Preview"></video>
 
 ## Getting started
 
