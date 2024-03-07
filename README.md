@@ -4,7 +4,7 @@ This package provides an easy and straightforward way to modify the Color of spe
 
 ## Preview
 
-<video controls poster="screenshots/rive_color_modifier_poster.png" src="screenshots/rive_color_modifier_example.mp4" title="Rive Color Modifier Preview"></video>
+<video controls poster="https://github.com/JSimonDev/rive_color_modifier/assets/124455161/6317399e-cbf3-4c21-9ccf-c058cd29e67e" src="https://github.com/JSimonDev/rive_color_modifier/assets/124455161/6d560039-d711-4947-bf4b-6d1c49c2c753" title="Rive Color Modifier Preview"></video>
 
 ## Getting started
 
@@ -12,7 +12,7 @@ To start using this package, add it as a dependency in your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  rive_color_modifier: ^1.0.0
+  rive_color_modifier: ^1.0.1
 ```
 
 ## Usage
