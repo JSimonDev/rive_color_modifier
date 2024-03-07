@@ -12,7 +12,7 @@ To start using this package, add it as a dependency in your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  rive_color_modifier: ^1.0.1
+  rive_color_modifier: ^1.0.3
 ```
 
 ## Usage

@@ -1,4 +1,4 @@
-### 1.0.1 - Example added
+### 1.0.3 - Example added
 
 - You can find a simple demo in the "example" folder
 
