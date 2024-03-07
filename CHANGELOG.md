@@ -1,16 +1,8 @@
-# CHANGELOG
-
-## 1.0.2 - Fixed a bug with the readme video
-
-- The video was not being displayed in the readme file. This was fixed by changing the video link to a direct link to the video file.
-
-## 1.0.1 - Example added
+### 1.0.1 - Example added
 
 - You can find a simple demo in the "example" folder
 
-## 1.0.0 - Basic functionality
-
-### Added
+### 1.0.0 - Basic functionality
 
 - `RiveColorComponent`: Introduces a foundational class to manage and apply color properties within Rive animations. It allows for dynamic color manipulation directly within the Dart code, enhancing the flexibility and interactivity of Rive animations in Flutter apps.
 

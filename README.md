@@ -2,9 +2,9 @@
 
 This package provides an easy and straightforward way to modify the Color of specific Components within [Rive](https://rive.app/) Animations at runtime, while also maintaining their opacity (alpha values) throughout the animation.
 
-## Preview
+## Demo
 
-<video controls poster="https://github.com/JSimonDev/rive_color_modifier/assets/124455161/6317399e-cbf3-4c21-9ccf-c058cd29e67e" src="https://github.com/JSimonDev/rive_color_modifier/assets/124455161/6d560039-d711-4947-bf4b-6d1c49c2c753" title="Rive Color Modifier Preview"></video>
+![rive_color_modifier_example](https://github.com/JSimonDev/rive_color_modifier/assets/124455161/3652c757-d825-4566-a27e-07af0468e2d5)
 
 ## Getting started
 
