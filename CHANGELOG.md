@@ -1,8 +1,12 @@
-### 1.0.3 - Example added
+### [1.0.4] - README.md updated
+
+- Package documentation improvement
+
+### [1.0.3] - Example added
 
 - You can find a simple demo in the "example" folder
 
-### 1.0.0 - Basic functionality
+### [1.0.0] - Basic functionality
 
 - `RiveColorComponent`: Introduces a foundational class to manage and apply color properties within Rive animations. It allows for dynamic color manipulation directly within the Dart code, enhancing the flexibility and interactivity of Rive animations in Flutter apps.
 
