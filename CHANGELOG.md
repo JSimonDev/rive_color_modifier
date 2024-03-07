@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.0.2 - Fixed a bug with the readme video
+
+- The video was not being displayed in the readme file. This was fixed by changing the video link to a direct link to the video file.
+
 ## 1.0.1 - Example added
 
 - You can find a simple demo in the "example" folder
@@ -13,15 +17,3 @@
 - `RiveColorModifier`: Provides a specialized class to modify and adjust color properties of Rive animations. It focuses on fine-tuned color alteration, enabling developers to implement detailed color transformations and effects on Rive objects.
 
 - `RiveCustomRenderObject`: Implements a custom render object for Rive animations, extending Flutter's RenderBox. This class is designed to offer a tailored rendering approach, accommodating specific or advanced rendering requirements for Rive animations. It allows for enhanced integration of Rive animations with Flutter's rendering engine, ensuring optimized performance and customization.
-
-### Fixed
-
-- Initial release, no fixes.
-
-### Changed
-
-- Initial release, no changes.
-
-### Deprecated
-
-- Initial release, no deprecations.

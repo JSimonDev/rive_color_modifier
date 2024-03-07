@@ -2,7 +2,7 @@ name: rive_color_modifier
 description: "An easy and straightforward way to modify the Color of specific
   Components within Rive Animations at runtime, while also maintaining their
   opacity throughout the animation."
-version: 1.0.1
+version: 1.0.2
 homepage: https://jsimon.dev
 repository: https://github.com/JSimonDev/rive_color_modifier
 issue_tracker: https://github.com/JSimonDev/rive_color_modifier/issues
