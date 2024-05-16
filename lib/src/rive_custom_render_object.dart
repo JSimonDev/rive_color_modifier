@@ -27,9 +27,13 @@ class RiveCustomRenderObject extends RiveRenderObject {
 
     for (final component in _components) {
       final shapePatternRegExp = RegExp(component.shapePattern);
-      final shapes = artboard.objects.where(
-        (object) => object is Shape && shapePatternRegExp.hasMatch(object.name),
-      ) as List<Shape>;
+      final shapes = artboard.objects
+          .where(
+            (object) =>
+                object is Shape && shapePatternRegExp.hasMatch(object.name),
+          )
+          .map((object) => object as Shape)
+          .toList();
 
       if (shapes.isEmpty) {
         throw Exception(
