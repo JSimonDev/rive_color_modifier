@@ -26,44 +26,45 @@ class RiveCustomRenderObject extends RiveRenderObject {
     _components = value;
 
     for (final component in _components) {
-      component.shape = artboard.objects.firstWhere(
-        (object) => object is Shape && object.name == component.shapeName,
-        orElse: () => null,
-      ) as Shape?;
+      final shapePatternRegExp = RegExp(component.shapePattern);
+      final shapes = artboard.objects.where(
+        (object) => object is Shape && shapePatternRegExp.hasMatch(object.name),
+      ) as List<Shape>;
 
-      if (component.shape != null &&
-          component.fillName != null &&
-          component.shape!.fills.isNotEmpty) {
-        try {
-          component.fill = component.shape!.fills.firstWhere(
-            (fill) => fill.name == component.fillName,
-          );
-        } catch (e) {
-          component.fill = null;
-        }
+      if (shapes.isEmpty) {
+        throw Exception(
+            "Could not find shape that matches: ${component.shapePattern}");
+      }
 
-        if (component.fill == null) {
-          throw Exception(
-            "Could not find fill named: ${component.fillName}",
-          );
-        }
-      } else if (component.shape != null &&
-          component.strokeName != null &&
-          component.shape!.strokes.isNotEmpty) {
-        try {
-          component.stroke = component.shape!.strokes
-              .firstWhere((stroke) => stroke.name == component.strokeName);
-        } catch (e) {
-          component.stroke = null;
+      for (final shape in shapes) {
+        var fills = <Fill>[];
+        if (component.fillPattern != null) {
+          final fillPatternRegExp = RegExp(component.fillPattern!);
+          fills = shape.fills
+              .where(
+                (fill) => fillPatternRegExp.hasMatch(fill.name),
+              )
+              .toList();
         }
 
-        if (component.stroke == null) {
-          throw Exception(
-            "Could not find stroke named: ${component.strokeName}",
-          );
+        var strokes = <Stroke>[];
+
+        if (component.strokePattern != null) {
+          final strokePatternRegExp = RegExp(component.strokePattern!);
+          strokes = shape.strokes
+              .where(
+                (stroke) => strokePatternRegExp.hasMatch(stroke.name),
+              )
+              .toList();
         }
-      } else {
-        throw Exception("Could not find shape named: ${component.shapeName}");
+
+        component.shapeComponents.add(
+          ShapeComponents(
+            shape: shape,
+            fill: fills,
+            stroke: strokes,
+          ),
+        );
       }
     }
 
@@ -82,14 +83,15 @@ class RiveCustomRenderObject extends RiveRenderObject {
   @override
   void draw(Canvas canvas, Mat2D viewTransform) {
     for (final component in _components) {
-      if (component.fill != null) {
-        component.fill!.paint.color =
-            component.color.withAlpha(component.fill!.paint.color.alpha);
-      } else if (component.stroke != null) {
-        component.stroke!.paint.color =
-            component.color.withAlpha(component.stroke!.paint.color.alpha);
-      } else {
-        throw Exception("Could not find fill or stroke for component");
+      for (final shapeComponent in component.shapeComponents) {
+        for (final fill in shapeComponent.fill) {
+          fill.paint.color = component.color.withAlpha(fill.paint.color.alpha);
+        }
+
+        for (final stroke in shapeComponent.stroke) {
+          stroke.paint.color =
+              component.color.withAlpha(stroke.paint.color.alpha);
+        }
       }
     }
 

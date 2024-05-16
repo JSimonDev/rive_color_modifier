@@ -119,139 +119,139 @@ class _RiveChangeColorExampleAppState extends State<RiveChangeColorExampleApp> {
                   components: [
                     //* BACKGROUND COLOR
                     RiveColorComponent(
-                      shapeName: 'Background',
-                      fillName: 'Background Fill',
+                      shapePattern: 'Background',
+                      fillPattern: 'Background Fill',
                       color: isDarkMode ? vBackgroundColor : dBackgroundColor,
                     ),
                     //* SKIN COLOR
                     RiveColorComponent(
-                      shapeName: 'Head Skin',
-                      fillName: 'Head Skin Fill',
+                      shapePattern: 'Head Skin',
+                      fillPattern: 'Head Skin Fill',
                       color: isDarkMode ? vSkinColor : dSkinColor,
                     ),
                     RiveColorComponent(
-                      shapeName: 'Neck Skin',
-                      fillName: 'Neck Skin Fill',
+                      shapePattern: 'Neck Skin',
+                      fillPattern: 'Neck Skin Fill',
                       color: isDarkMode ? vSkinColor : dSkinColor,
                     ),
                     RiveColorComponent(
-                      shapeName: 'Left Arm Skin',
-                      strokeName: 'Left Arm Skin Stroke',
+                      shapePattern: 'Left Arm Skin',
+                      strokePattern: 'Left Arm Skin Stroke',
                       color: isDarkMode ? vSkinColor : dSkinColor,
                     ),
                     RiveColorComponent(
-                      shapeName: 'Right Arm Skin',
-                      strokeName: 'Right Arm Skin Stroke',
+                      shapePattern: 'Right Arm Skin',
+                      strokePattern: 'Right Arm Skin Stroke',
                       color: isDarkMode ? vSkinColor : dSkinColor,
                     ),
                     //* HAIR COLOR
                     RiveColorComponent(
-                      shapeName: 'Hair',
-                      fillName: 'Hair Fill',
+                      shapePattern: 'Hair',
+                      fillPattern: 'Hair Fill',
                       color: isDarkMode ? vHairColor : dHairColor,
                     ),
                     //* BANDANA COLOR
                     RiveColorComponent(
-                      shapeName: 'Bandana',
-                      fillName: 'Bandana Fill',
+                      shapePattern: 'Bandana',
+                      fillPattern: 'Bandana Fill',
                       color: isDarkMode ? vBandanaColor : dBandanaColor,
                     ),
                     //* BANDANA LINES COLOR
                     RiveColorComponent(
-                      shapeName: 'Bandana Lines',
-                      strokeName: 'Bandana Lines Stroke',
+                      shapePattern: 'Bandana Lines',
+                      strokePattern: 'Bandana Lines Stroke',
                       color:
                           isDarkMode ? vBandanaLinesColor : dBandanaLinesColor,
                     ),
                     //* EYEBROW COLOR
                     RiveColorComponent(
-                      shapeName: 'Left Eyebrow',
-                      strokeName: 'Left Eyebrow Stroke',
+                      shapePattern: 'Left Eyebrow',
+                      strokePattern: 'Left Eyebrow Stroke',
                       color: isDarkMode ? vEyebrowColor : dEyebrowColor,
                     ),
                     RiveColorComponent(
-                      shapeName: 'Right Eyebrow',
-                      strokeName: 'Right Eyebrow Stroke',
+                      shapePattern: 'Right Eyebrow',
+                      strokePattern: 'Right Eyebrow Stroke',
                       color: isDarkMode ? vEyebrowColor : dEyebrowColor,
                     ),
                     //* EYE COLOR
                     RiveColorComponent(
-                      shapeName: 'Left Pupil',
-                      fillName: 'Left Pupil Fill',
+                      shapePattern: 'Left Pupil',
+                      fillPattern: 'Left Pupil Fill',
                       color: isDarkMode ? vEyeColor : dEyeColor,
                     ),
                     RiveColorComponent(
-                      shapeName: 'Right Pupil',
-                      fillName: 'Right Pupil Fill',
+                      shapePattern: 'Right Pupil',
+                      fillPattern: 'Right Pupil Fill',
                       color: isDarkMode ? vEyeColor : dEyeColor,
                     ),
                     //* CLOSED EYE COLOR
                     RiveColorComponent(
-                      shapeName: 'Left Eye Closed',
-                      strokeName: 'Left Eye Closed Stroke',
+                      shapePattern: 'Left Eye Closed',
+                      strokePattern: 'Left Eye Closed Stroke',
                       color: isDarkMode ? vMouthColor : dMouthColor,
                     ),
                     RiveColorComponent(
-                      shapeName: 'Right Eye Closed',
-                      strokeName: 'Right Eye Closed Stroke',
+                      shapePattern: 'Right Eye Closed',
+                      strokePattern: 'Right Eye Closed Stroke',
                       color: isDarkMode ? vMouthColor : dMouthColor,
                     ),
                     //* NOSE COLOR
                     RiveColorComponent(
-                      shapeName: 'Nose',
-                      fillName: 'Nose Fill',
+                      shapePattern: 'Nose',
+                      fillPattern: 'Nose Fill',
                       color: isDarkMode ? vNoseColor : dNoseColor,
                     ),
                     //* MOUTH COLOR
                     RiveColorComponent(
-                      shapeName: 'Mouth',
-                      strokeName: 'Mouth Stroke',
+                      shapePattern: 'Mouth',
+                      strokePattern: 'Mouth Stroke',
                       color: isDarkMode ? vMouthColor : dMouthColor,
                     ),
                     //* EARRING COLOR
                     RiveColorComponent(
-                      shapeName: 'Left Earring',
-                      fillName: 'Left Earring Fill',
+                      shapePattern: 'Left Earring',
+                      fillPattern: 'Left Earring Fill',
                       color: isDarkMode ? vEarringColor : dEarringColor,
                     ),
                     RiveColorComponent(
-                      shapeName: 'Right Earring',
-                      fillName: 'Right Earring Fill',
+                      shapePattern: 'Right Earring',
+                      fillPattern: 'Right Earring Fill',
                       color: isDarkMode ? vEarringColor : dEarringColor,
                     ),
                     //* OVERALL COLOR
                     RiveColorComponent(
-                      shapeName: 'Overall',
-                      fillName: 'Overall Fill',
+                      shapePattern: 'Overall',
+                      fillPattern: 'Overall Fill',
                       color: isDarkMode ? vOverallColor : dOverallColor,
                     ),
                     //* POCKET COLOR
                     RiveColorComponent(
-                      shapeName: 'Pocket',
-                      strokeName: 'Pocket Stroke',
+                      shapePattern: 'Pocket',
+                      strokePattern: 'Pocket Stroke',
                       color: isDarkMode ? vPocketColor : dPocketColor,
                     ),
                     //* BUTTON COLOR
                     RiveColorComponent(
-                      shapeName: 'Left Button',
-                      fillName: 'Left Button Fill',
+                      shapePattern: 'Left Button',
+                      fillPattern: 'Left Button Fill',
                       color: isDarkMode ? vButtonColor : dButtonColor,
                     ),
                     RiveColorComponent(
-                      shapeName: 'Right Button',
-                      fillName: 'Right Button Fill',
+                      shapePattern: 'Right Button',
+                      fillPattern: 'Right Button Fill',
                       color: isDarkMode ? vButtonColor : dButtonColor,
                     ),
                     //* BUTTON THREAD COLOR
                     RiveColorComponent(
-                      shapeName: 'Left Button Thread',
-                      strokeName: 'Left Button Thread Stroke',
+                      shapePattern: 'Left Button Thread',
+                      strokePattern: 'Left Button Thread Stroke',
                       color:
                           isDarkMode ? vButtonThreadColor : dButtonThreadColor,
                     ),
                     RiveColorComponent(
-                      shapeName: 'Right Button Thread',
-                      strokeName: 'Right Button Thread Stroke',
+                      shapePattern: 'Right Button Thread',
+                      strokePattern: 'Right Button Thread Stroke',
                       color:
                           isDarkMode ? vButtonThreadColor : dButtonThreadColor,
                     ),
