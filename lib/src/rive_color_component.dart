@@ -23,8 +23,7 @@ class RiveColorComponent {
     this.fillPattern,
     this.strokePattern,
     required this.color,
-  }) : assert(fillPattern == null || strokePattern == null,
-            "Fill or stroke name must be provided, but not both");
+  });
 
   /// Overrides the equality operator for the [RiveColorComponent] class.
   ///
