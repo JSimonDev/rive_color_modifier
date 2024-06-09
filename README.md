@@ -11,7 +11,7 @@ This package provides an easy and straightforward way to modify the Color of spe
 Before starting to work with this package, it's essential to understand that it is necessary to have a .riv file, which must contain the animations you wish to modify. If you have not yet created any animation in Rive or are unfamiliar with its editor, there's no need to worry. You can visit the [community](https://rive.app/community) section to explore and edit the impressive animations shared by the community. In my case, I borrowed this fabulous animation from [JcToon](https://rive.app/@JcToon/). Once you access the editor, it is crucial to consider some key aspects before integrating the file into our project.
 
 1- It is crucial to assign a name to the Artboard that houses the animation you wish to alter. This step is essential because we will need to later retrieve the artboard using the assigned name in the following manner:
-  
+
 ```dart
 // This method will be called in the initState method of your StatefulWidget
 Future<void> _load() async {
@@ -29,7 +29,7 @@ Future<void> _load() async {
 }
 ```
 
-Thus, we can then pass the previously initialized variable _avatarArtboard to our `RiveColorModifier`.
+Thus, we can then pass the previously initialized variable \_avatarArtboard to our `RiveColorModifier`.
 
 Changing the name of the Artboard in the Rive editor is a straightforward process: simply double-click on any of the two highlighted areas and change the name to one you find most suitable for yourself.
 
@@ -47,28 +47,44 @@ RiveColorModifier(
   components: [
     //* EARRING COLOR
     RiveColorComponent(
-      shapeName: 'Left Earring', // Shape name
+      shapePattern: 'Left Earring', // Shape name
       // rest of the code
     ),
     RiveColorComponent(
-      shapeName: 'Right Earring', // Shape name
+      shapePattern: 'Right Earring', // Shape name
       //...
     ),
     //* BANDANA LINES COLOR
     RiveColorComponent(
-      shapeName: 'Bandana Lines', // Shape name
+      shapePattern: 'Bandana Lines', // Shape name
       //...
     ),
     //* BANDANA COLOR
     RiveColorComponent(
-      shapeName: 'Bandana', // Shape name
+      shapePattern: 'Bandana', // Shape name
       //...
     ),
     //* HEAD SKIN COLOR
     RiveColorComponent(
-      shapeName: 'Head Skin', // Shape name
+      shapePattern: 'Head Skin', // Shape name
       //...
     ),
+  ],
+)
+```
+
+Or you can use patterns to match multiple Shapes with a single `RiveColorComponent`:
+
+```dart
+RiveColorModifier(
+  artboard: _avatarArtboard,
+  components: [
+    //* EARRING COLOR
+    RiveColorComponent(
+      shapePattern: '.*Earring', // Pattern to match all Shapes that end with "Earring"ss
+      // rest of the code
+    ),
+    // ...
   ],
 )
 ```
@@ -77,11 +93,11 @@ RiveColorModifier(
 
 - First, select the Shape that contains the Fill or Stroke you wish to modify.
 
-![Rive Shape Selection](https://github.com/JSimonDev/rive_color_modifier/assets/124455161/9059cae2-8741-4dc7-b829-57aac2aa3bae) *As we can see on the right, in this case, it's a Fill.*
+![Rive Shape Selection](https://github.com/JSimonDev/rive_color_modifier/assets/124455161/9059cae2-8741-4dc7-b829-57aac2aa3bae) _As we can see on the right, in this case, it's a Fill._
 
 - Then click on the highlighted area and change the name to the one you desire.
 
-![Rive Fill Name](https://github.com/JSimonDev/rive_color_modifier/assets/124455161/643cfae4-51cb-493d-b475-d59877fe9ad3) *I always recommend naming it using the same name assigned to the Shape plus "Stroke" or "Fill" depending on the type.*
+![Rive Fill Name](https://github.com/JSimonDev/rive_color_modifier/assets/124455161/643cfae4-51cb-493d-b475-d59877fe9ad3) _I always recommend naming it using the same name assigned to the Shape plus "Stroke" or "Fill" depending on the type._
 
 Next, I'll show you an example of how the name of each Fill or Stroke is used to modify its color in the code:
 
@@ -91,25 +107,25 @@ RiveColorModifier(
   components: [
     //* EARRING COLOR
     RiveColorComponent(
-      shapeName: 'Left Earring',
-      fillName: 'Left Earring Fill', // Fill name
+      shapePattern: 'Left Earring',
+      fillPattern: 'Left Earring Fill', // Fill name
       color: Colors.yellow, // Color
     ),
     RiveColorComponent(
-      shapeName: 'Right Earring',
-      fillName: 'Right Earring Fill', // Fill name
+      shapePattern: 'Right Earring',
+      fillPattern: 'Right Earring Fill', // Fill name
       color: Colors.yellow, // Color
     ),
     //* BANDANA LINES COLOR
     RiveColorComponent(
-      shapeName: 'Bandana Lines',
-      strokeName: 'Bandana Lines Stroke', // Stroke name
+      shapePattern: 'Bandana Lines',
+      strokePattern: 'Bandana Lines Stroke', // Stroke name
       color: Colors.orange.shade300;, // Color
     ),
     //* BANDANA COLOR
     RiveColorComponent(
-      shapeName: 'Bandana',
-      fillName: 'Bandana Fill', // Fill name
+      shapePattern: 'Bandana',
+      fillPattern: 'Bandana Fill', // Fill name
       color: Colors.orange, // Color
     ),
     // ...
@@ -117,7 +133,22 @@ RiveColorModifier(
 )
 ```
 
-> IMPORTANT: You should always consider whether the Shape you want to modify has a Fill or Stroke, as this will determine whether you should use the fillName or strokeName in the corresponding `RiveColorComponent`. Something to keep in mind is that if the Shape you wish to modify has both a Fill and a Stroke, you will need to create two `RiveColorComponent`s for that Shape, one for the Fill and another for the Stroke.
+Or you can use patterns to match multiple Fills or Strokes with a single `RiveColorComponent`:
+
+```dart
+RiveColorModifier(
+  artboard: _avatarArtboard,
+  components: [
+    //* EARRING COLOR
+    RiveColorComponent(
+      shapePattern: '.*Earring', // Pattern to match all Shapes that end with "Earring"
+      fillPattern: '.*Earring Fill', // Pattern to match all Fills that end with "Earring Fill"
+      color: Colors.yellow, // Color
+    ),
+    // ...
+  ],
+)
+```
 
 On certain occasions, we might encounter a component we want to change that, instead of being a Shape, is a geometric figure. In this case, what we need to do is select the figure and edit the vertices to turn it into a Shape, as shown in the following image.
 
@@ -139,6 +170,8 @@ On certain occasions, we might encounter a component we want to change that, ins
 
 ## How It Works
 
+### Without using patterns
+
 This package allows you to dynamically modify the Color properties of specific components in your Rive Animations. Below is an example demonstrating how to use `RiveColorModifier` along with `RiveColorComponent` to change the color of particular [Shapes](https://help.rive.app/editor/fundamentals/shapes-and-paths) within an animation.
 
 You just have to provide the [Artboard](https://help.rive.app/editor/fundamentals/artboards) of the [Rive](https://rive.app/) asset you are using to the RiveColorModifier, and in the components property, you pass a RiveColorComponent for each Shape you want to change the color of. You also pass the name of the [Fill](https://help.rive.app/editor/fundamentals/fill-and-stroke) or [Stroke](https://help.rive.app/editor/fundamentals/fill-and-stroke) and then the Color you want it to have. Super simple!
@@ -150,17 +183,35 @@ RiveColorModifier(
   components: [
     // Changing the color of a Shape's Fill
     RiveColorComponent(
-      shapeName: 'Your Shape Name',
-      fillName: 'Your Fill Name',
+      shapePattern: 'Your Shape Name',
+      fillPattern: 'Your Fill Name',
       color: isDarkMode ? Colors.white : Colors.black, // Dynamic color depending on the theme
     ),
     // Changing the color of a Shape's Stroke
     RiveColorComponent(
-      shapeName: 'Your Shape Name',
-      strokeName: 'Your Stroke Name',
+      shapePattern: 'Your Shape Name',
+      strokePattern: 'Your Stroke Name',
       color: isDarkMode ? Colors.white : Colors.black, // Dynamic color depending on the theme
     ),
   ],
+)
+```
+
+### Using patterns
+
+```dart
+// Example of how to use RiveColorModifier with patterns
+RiveColorModifier(
+  artboard: _yourArtboard,
+  components: [
+    // Changing the color of multiple Shapes' Fills and Strokes with a single RiveColorComponent
+    RiveColorComponent(
+         shapePattern : '.*',        // Pattern to match all Shapes
+         fillPattern  : '.*primary', //          ""          Fills that end with "primary"
+         strokePattern: '.*primary', //          ""          Strokes that end with "primary"
+         color: primaryColor,
+      ),
+  ]
 )
 ```
 
