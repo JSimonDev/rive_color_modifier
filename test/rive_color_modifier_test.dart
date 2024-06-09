@@ -8,29 +8,29 @@ void main() {
     test('RiveColorComponent creation test', () {
       const color = Color(0xFFFFFFFF);
       var component = RiveColorComponent(
-        shapeName: 'shape',
-        fillName: 'fill',
+        shapePattern: 'shape',
+        fillPattern: 'fill',
         color: color,
       );
 
-      expect(component.shapeName, 'shape');
-      expect(component.fillName, 'fill');
+      expect(component.shapePattern, 'shape');
+      expect(component.fillPattern, 'fill');
       expect(component.color, color);
-      expect(component.strokeName, null);
+      expect(component.strokePattern, null);
     });
 
     test('RiveColorComponent creation with strokeName test', () {
       const color = Color(0xFFFFFFFF);
       var component = RiveColorComponent(
-        shapeName: 'shape',
-        strokeName: 'stroke',
+        shapePattern: 'shape',
+        strokePattern: 'stroke',
         color: color,
       );
 
-      expect(component.shapeName, 'shape');
-      expect(component.strokeName, 'stroke');
+      expect(component.shapePattern, 'shape');
+      expect(component.strokePattern, 'stroke');
       expect(component.color, color);
-      expect(component.fillName, null);
+      expect(component.fillPattern, null);
     });
 
     test(
@@ -39,9 +39,9 @@ void main() {
       const color = Color(0xFFFFFFFF);
       expect(
           () => RiveColorComponent(
-                shapeName: 'shape',
-                fillName: 'fill',
-                strokeName: 'stroke',
+                shapePattern: 'shape',
+                fillPattern: 'fill',
+                strokePattern: 'stroke',
                 color: color,
               ),
           throwsA(isA<AssertionError>()));
@@ -50,14 +50,14 @@ void main() {
     test('RiveColorComponent equality test', () {
       const color = Color(0xFFFFFFFF);
       var component1 = RiveColorComponent(
-        shapeName: 'shape',
-        fillName: 'fill',
+        shapePattern: 'shape',
+        fillPattern: 'fill',
         color: color,
       );
 
       var component2 = RiveColorComponent(
-        shapeName: 'shape',
-        fillName: 'fill',
+        shapePattern: 'shape',
+        fillPattern: 'fill',
         color: color,
       );
 

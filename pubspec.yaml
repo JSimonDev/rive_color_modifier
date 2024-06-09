@@ -8,13 +8,13 @@ repository: https://github.com/JSimonDev/rive_color_modifier
 issue_tracker: https://github.com/JSimonDev/rive_color_modifier/issues
 
 environment:
-  sdk: '>=3.3.0 <4.0.0'
+  sdk: ">=3.3.0 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  rive: ^0.12.4
+  rive: ">=0.12.4"
 
 dev_dependencies:
   flutter_lints: ^3.0.1
@@ -22,5 +22,5 @@ dev_dependencies:
     sdk: flutter
 
 screenshots:
-  - description: 'Rive_color_modifier_preview'
+  - description: "Rive_color_modifier_preview"
     path: screenshots/rive_color_modifier_poster.png
