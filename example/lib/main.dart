@@ -119,139 +119,94 @@ class _RiveChangeColorExampleAppState extends State<RiveChangeColorExampleApp> {
                   components: [
                     //* BACKGROUND COLOR
                     RiveColorComponent(
-                      shapePattern: 'Background',
-                      fillPattern: 'Background Fill',
+                      shapePattern: '.*Background',
+                      fillPattern: '.*',
                       color: isDarkMode ? vBackgroundColor : dBackgroundColor,
                     ),
                     //* SKIN COLOR
                     RiveColorComponent(
-                      shapePattern: 'Head Skin',
-                      fillPattern: 'Head Skin Fill',
-                      color: isDarkMode ? vSkinColor : dSkinColor,
-                    ),
-                    RiveColorComponent(
-                      shapePattern: 'Neck Skin',
-                      fillPattern: 'Neck Skin Fill',
-                      color: isDarkMode ? vSkinColor : dSkinColor,
-                    ),
-                    RiveColorComponent(
-                      shapePattern: 'Left Arm Skin',
-                      strokePattern: 'Left Arm Skin Stroke',
-                      color: isDarkMode ? vSkinColor : dSkinColor,
-                    ),
-                    RiveColorComponent(
-                      shapePattern: 'Right Arm Skin',
-                      strokePattern: 'Right Arm Skin Stroke',
+                      shapePattern: '.*Skin',
+                      fillPattern: '.*',
+                      strokePattern: '.*',
                       color: isDarkMode ? vSkinColor : dSkinColor,
                     ),
                     //* HAIR COLOR
                     RiveColorComponent(
-                      shapePattern: 'Hair',
-                      fillPattern: 'Hair Fill',
+                      shapePattern: '.*Hair',
+                      fillPattern: '.*',
                       color: isDarkMode ? vHairColor : dHairColor,
                     ),
                     //* BANDANA COLOR
                     RiveColorComponent(
-                      shapePattern: 'Bandana',
-                      fillPattern: 'Bandana Fill',
+                      shapePattern: '.*Bandana',
+                      fillPattern: '.*',
                       color: isDarkMode ? vBandanaColor : dBandanaColor,
                     ),
                     //* BANDANA LINES COLOR
                     RiveColorComponent(
-                      shapePattern: 'Bandana Lines',
-                      strokePattern: 'Bandana Lines Stroke',
+                      shapePattern: '.*Bandana Lines',
+                      strokePattern: '.*',
                       color:
                           isDarkMode ? vBandanaLinesColor : dBandanaLinesColor,
                     ),
                     //* EYEBROW COLOR
                     RiveColorComponent(
-                      shapePattern: 'Left Eyebrow',
-                      strokePattern: 'Left Eyebrow Stroke',
-                      color: isDarkMode ? vEyebrowColor : dEyebrowColor,
-                    ),
-                    RiveColorComponent(
-                      shapePattern: 'Right Eyebrow',
-                      strokePattern: 'Right Eyebrow Stroke',
+                      shapePattern: '.*Eyebrow',
+                      strokePattern: '.*',
                       color: isDarkMode ? vEyebrowColor : dEyebrowColor,
                     ),
                     //* EYE COLOR
                     RiveColorComponent(
-                      shapePattern: 'Left Pupil',
-                      fillPattern: 'Left Pupil Fill',
+                      shapePattern: '.*Pupil',
+                      fillPattern: '.*',
                       color: isDarkMode ? vEyeColor : dEyeColor,
                     ),
+                    //* CLOSED EYE && MOUTH COLOR
                     RiveColorComponent(
-                      shapePattern: 'Right Pupil',
-                      fillPattern: 'Right Pupil Fill',
-                      color: isDarkMode ? vEyeColor : dEyeColor,
-                    ),
-                    //* CLOSED EYE COLOR
-                    RiveColorComponent(
-                      shapePattern: 'Left Eye Closed',
-                      strokePattern: 'Left Eye Closed Stroke',
-                      color: isDarkMode ? vMouthColor : dMouthColor,
-                    ),
-                    RiveColorComponent(
-                      shapePattern: 'Right Eye Closed',
-                      strokePattern: 'Right Eye Closed Stroke',
+                      shapePattern: '.*(Eye Closed|Mouth)\$',
+                      strokePattern: '.*',
                       color: isDarkMode ? vMouthColor : dMouthColor,
                     ),
                     //* NOSE COLOR
                     RiveColorComponent(
-                      shapePattern: 'Nose',
-                      fillPattern: 'Nose Fill',
+                      shapePattern: '.*Nose',
+                      fillPattern: '.*',
                       color: isDarkMode ? vNoseColor : dNoseColor,
-                    ),
-                    //* MOUTH COLOR
-                    RiveColorComponent(
-                      shapePattern: 'Mouth',
-                      strokePattern: 'Mouth Stroke',
-                      color: isDarkMode ? vMouthColor : dMouthColor,
                     ),
                     //* EARRING COLOR
                     RiveColorComponent(
-                      shapePattern: 'Left Earring',
-                      fillPattern: 'Left Earring Fill',
-                      color: isDarkMode ? vEarringColor : dEarringColor,
-                    ),
-                    RiveColorComponent(
-                      shapePattern: 'Right Earring',
-                      fillPattern: 'Right Earring Fill',
+                      shapePattern: '.*Earring',
+                      fillPattern: '.*',
                       color: isDarkMode ? vEarringColor : dEarringColor,
                     ),
                     //* OVERALL COLOR
                     RiveColorComponent(
-                      shapePattern: 'Overall',
-                      fillPattern: 'Overall Fill',
+                      shapePattern: '.*Overall',
+                      fillPattern: '.*',
                       color: isDarkMode ? vOverallColor : dOverallColor,
                     ),
                     //* POCKET COLOR
                     RiveColorComponent(
-                      shapePattern: 'Pocket',
-                      strokePattern: 'Pocket Stroke',
+                      shapePattern: '.*Pocket',
+                      strokePattern: '.*',
                       color: isDarkMode ? vPocketColor : dPocketColor,
                     ),
                     //* BUTTON COLOR
                     RiveColorComponent(
-                      shapePattern: 'Left Button',
-                      fillPattern: 'Left Button Fill',
-                      color: isDarkMode ? vButtonColor : dButtonColor,
-                    ),
-                    RiveColorComponent(
-                      shapePattern: 'Right Button',
-                      fillPattern: 'Right Button Fill',
+                      shapePattern: '.*Button',
+                      fillPattern: '.*',
                       color: isDarkMode ? vButtonColor : dButtonColor,
                     ),
                     //* BUTTON THREAD COLOR
                     RiveColorComponent(
-                      shapePattern: 'Left Button Thread',
-                      strokePattern: 'Left Button Thread Stroke',
+                      shapePattern: 'Thread',
+                      strokePattern: '.*',
                       color:
                           isDarkMode ? vButtonThreadColor : dButtonThreadColor,
                     ),
                     RiveColorComponent(
-                      shapePattern: 'Right Button Thread',
-                      strokePattern: 'Right Button Thread Stroke',
+                      shapePattern: 'Thread',
+                      strokePattern: '.*',
                       color:
                           isDarkMode ? vButtonThreadColor : dButtonThreadColor,
                     ),
