@@ -9,6 +9,7 @@
 .history
 .svn/
 migrate_working_dir/
+.markdownlint.json
 
 # IntelliJ related
 *.iml
