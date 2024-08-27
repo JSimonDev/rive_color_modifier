@@ -1,4 +1,21 @@
-## [2.0.0] - Introduction of patterns to match any shape, fill, or stroke that matches a given pattern
+## 2.1.1
+
+### New Features
+
+- Added support for changing both linear and radial gradients with the introduction of the new widget: RiveGradientComponent. This change addresses issue [#1](https://github.com/JSimonDev/rive_color_modifier/issues/1): "Cannot change gradient color"
+
+### Bug Fixes
+
+- Added documentation about the need to enable the "Export Options -> Export all names" setting in Rive when preparing files for use with this package [(#3)](https://github.com/JSimonDev/rive_color_modifier/issues/3)
+- Removed the override of didUnmountRenderObject method in RiveColorModifier to prevent framework exceptions during widget disposal [(#4)](https://github.com/JSimonDev/rive_color_modifier/issues/4)
+
+### Documentation
+
+- Updated documentation to include information about exporting names from Rive files.
+- Added information about limitations with name exporting in Rive files, particularly for Stroke and Fills elements intended for color changes [(#2)](https://github.com/JSimonDev/rive_color_modifier/issues/2).
+- Included a note about potential differences between Rive Pro and non-Pro accounts in terms of export capabilities and their impact on package functionality.
+
+## 2.0.0
 
 ### Breaking Changes
 
@@ -21,17 +38,19 @@ RiveColorComponent(
 
 - Then this component will match every fill or stroke that ends with "primary" in their names.
 
-## [1.0.6] - Update Rive version constraints to "^0.13.1"
+## 1.0.6
 
-## [1.0.5] - README.md updated
+- Update Rive version constraints to "^0.13.1"
+
+## 1.0.5
 
 - Package documentation improvement
 
-## [1.0.3] - Example added
+## 1.0.3
 
 - You can find a simple demo in the "example" folder
 
-## [1.0.0] - Basic functionality
+## 1.0.0
 
 - `RiveColorComponent`: Introduces a foundational class to manage and apply color properties within Rive animations. It allows for dynamic color manipulation directly within the Dart code, enhancing the flexibility and interactivity of Rive animations in Flutter apps.
 

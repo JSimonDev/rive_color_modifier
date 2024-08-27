@@ -8,6 +8,14 @@ This package provides an easy and straightforward way to modify the Color of spe
 
 ## Getting started
 
+### Important Notes
+
+1. **Exporting Names**: When exporting your Rive file, make sure to enable the "Export Options -> Export all names" setting. This is crucial for the package to function correctly.
+![Export All Names](https://github.com/user-attachments/assets/9ed2870c-7dce-479d-9af8-f69fddab4c15)
+
+2. **Rive Pro vs. No Pro**: There are some limitations when using the runtime export version of Rive files, particularly for changing the colors of certain elements like Strokes and Fills. To get full functionality, it might be necessary to use the backup export option, which is a Rive Pro feature. The issue at hand is that since [version v0.8.1440](https://rive.app/changelog/export-object-name-options) of the Rive editor, the option to not export object names was enabled to reduce file size. This causes a problem where only the names of Shapes are exported, but not the names of the elements they contain, such as Fills and Strokes. I am exploring effective solutions for non-Pro users so that the package can still be used with the names of fills and strokes.
+3. **Gradients Support**: As of version 2.1.1, this package now supports changing both linear and radial gradients using the new RiveGradientComponent widget.
+
 Before starting to work with this package, it's essential to understand that it is necessary to have a .riv file, which must contain the animations you wish to modify. If you have not yet created any animation in Rive or are unfamiliar with its editor, there's no need to worry. You can visit the [community](https://rive.app/community) section to explore and edit the impressive animations shared by the community. In my case, I borrowed this fabulous animation from [JcToon](https://rive.app/@JcToon/). Once you access the editor, it is crucial to consider some key aspects before integrating the file into our project.
 
 1- It is crucial to assign a name to the Artboard that houses the animation you wish to alter. This step is essential because we will need to later retrieve the artboard using the assigned name in the following manner:
@@ -216,6 +224,26 @@ RiveColorModifier(
 ```
 
 If you want to see a complete example, you can check the [example](https://pub.dev/packages/rive_color_modifier/example) provided in the package.
+
+### Changing Gradients
+
+New in version 2.1.1, you can now modify linear and radial gradients:
+
+```dart
+// Example of how to change gradients with RiveGradientComponent
+RiveColorModifier(
+  artboard: _yourArtboard,
+  components: [
+    // Changing a linear or radial gradient
+    RiveGradientComponent(
+      shapePattern: 'Your Shape Name',
+      fillPattern: '.*', // Pattern to match all Fills
+      colors: [Colors.red, Colors.blue],
+      stops: [0.0, 1.0],
+    ),
+  ],
+)
+```
 
 ## Additional information
 
