@@ -11,4 +11,5 @@
 library rive_color_modifier;
 
 export 'src/rive_color_component.dart';
+export 'src/rive_gradient_component.dart';
 export 'src/rive_color_modifier.dart';
