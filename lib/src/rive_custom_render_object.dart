@@ -5,16 +5,15 @@ import 'dart:ui';
 import 'package:flutter/foundation.dart';
 import 'package:rive/math.dart' show Mat2D;
 import 'package:rive/rive.dart';
-
-import 'package:rive_color_modifier/src/rive_color_component.dart';
-import 'package:rive_color_modifier/src/rive_component.dart';
-import 'package:rive_color_modifier/src/rive_gradient_component.dart';
 // ignore: implementation_imports
 import 'package:rive/src/rive_core/shapes/paint/linear_gradient.dart'
     as rive_core;
 // ignore: implementation_imports
 import 'package:rive/src/rive_core/shapes/paint/radial_gradient.dart'
     as rive_core;
+import 'package:rive_color_modifier/src/rive_color_component.dart';
+import 'package:rive_color_modifier/src/rive_component.dart';
+import 'package:rive_color_modifier/src/rive_gradient_component.dart';
 
 /// A custom Rive render object that taps into the draw method to modify colors and gradients.
 ///
@@ -40,6 +39,7 @@ import 'package:rive/src/rive_core/shapes/paint/radial_gradient.dart'
 /// ```
 class RiveCustomRenderObject extends RiveRenderObject {
   List<RiveComponent> _components = [];
+  bool _needsColorUpdate = true;
 
   /// Creates a [RiveCustomRenderObject] with the given [artboard].
   RiveCustomRenderObject(super.artboard);
@@ -238,6 +238,13 @@ class RiveCustomRenderObject extends RiveRenderObject {
     super.dispose();
   }
 
+  @override
+  bool advance(double elapsedSeconds) {
+    final result = super.advance(elapsedSeconds);
+    _updateComponents();
+    return result;
+  }
+
   /// Overrides the [draw] method to handle exceptions during drawing.
   ///
   /// This method calls the superclass [draw] method and handles any exceptions
@@ -249,6 +256,10 @@ class RiveCustomRenderObject extends RiveRenderObject {
   @override
   void draw(Canvas canvas, Mat2D viewTransform) {
     try {
+      if (_needsColorUpdate) {
+        _updateComponents();
+        _needsColorUpdate = false;
+      }
       super.draw(canvas, viewTransform);
     } catch (e, stackTrace) {
       _handleDrawError(e, stackTrace);
