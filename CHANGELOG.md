@@ -1,3 +1,13 @@
+## 2.1.2
+
+### Improvements
+
+- Added `advance()` method to update component colors during runtime animation
+- Optimized `draw()` method to update colors only when necessary using `_needsColorUpdate` flag
+- Better handling of color updates during continuous animation rendering
+
+This update improves performance and efficiency in color modifications during Rive animations playback.
+
 ## 2.1.1
 
 ### New Features
