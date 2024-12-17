@@ -81,7 +81,7 @@ class _ExamplePreviewCard extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
           side: BorderSide(
-            color: colors.onSurface.withOpacity(0.1),
+            color: colors.onSurface.withValues(alpha: 0.1),
             width: 1,
           ),
         ),
