@@ -1,3 +1,10 @@
+## 2.1.3
+
+### Internal Changes
+
+- Updated internal color handling from `withOpacity()` to `withValue(alpha)` to align with Flutter standards
+- Bump to latest `rive`, v0.13.20
+
 ## 2.1.2
 
 ### Improvements
