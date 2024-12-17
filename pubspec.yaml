@@ -14,10 +14,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  rive: "^0.13.12"
+  rive: "^0.13.20"
 
 dev_dependencies:
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
 
