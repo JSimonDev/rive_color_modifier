@@ -158,11 +158,12 @@ class RiveCustomRenderObject extends RiveRenderObject {
     ShapeComponents shapeComponent,
   ) {
     for (final fill in shapeComponent.fill) {
-      fill.paint.color = component.color.withAlpha(fill.paint.color.alpha);
+      fill.paint.color = component.color.withValues(alpha: fill.paint.color.a);
     }
 
     for (final stroke in shapeComponent.stroke) {
-      stroke.paint.color = component.color.withAlpha(stroke.paint.color.alpha);
+      stroke.paint.color =
+          component.color.withValues(alpha: stroke.paint.color.a);
     }
   }
 
