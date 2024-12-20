@@ -73,10 +73,7 @@ class RiveColorComponent implements RiveComponent {
     this.fillPattern,
     this.strokePattern,
     required this.color,
-  }) : assert(
-          (fillPattern == null) != (strokePattern == null),
-          'Either fillPattern or strokePattern must be provided, but not both.',
-        );
+  });
 
   /// Determines if this [RiveColorComponent] is equal to another object.
   ///
