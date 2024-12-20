@@ -5,9 +5,11 @@
 *.swp
 .DS_Store
 .atom/
+.build/
 .buildlog/
 .history
 .svn/
+.swiftpm/
 migrate_working_dir/
 
 # IntelliJ related
@@ -42,3 +44,31 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# iOS related
+ios/Pods/
+ios/Podfile.lock
+ios/Flutter/
+ios/Runner.xcworkspace/
+ios/Runner.xcarchive/
+ios/build/
+ios/DerivedData/
+*.xcuserstate
+*.xcscmblueprint
+ios/*.xcodeproj/project.xcworkspace/
+ios/*.xcodeproj/xcuserdata/
+ios/.symlinks/
+
+# macOS related 
+macos/Pods/
+macos/Podfile.lock
+macos/Flutter/
+macos/Runner.xcworkspace/
+macos/Runner.xcarchive/
+macos/build/
+macos/DerivedData/
+*.xcuserstate
+*.xcscmblueprint
+macos/*.xcodeproj/project.xcworkspace/
+macos/*.xcodeproj/xcuserdata/
+macos/.symlinks/
