@@ -91,113 +91,121 @@ class _RiveModifyColorScreenState extends State<RiveModifyColorScreen> {
         body: _avatarArtboard != null
             ? Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  Spacer(flex: 2),
                   GestureDetector(
                     onTap: onTap,
-                    child: RiveColorModifier(
-                      artboard: _avatarArtboard!,
-                      components: [
-                        //* BACKGROUND COLOR
-                        RiveColorComponent(
-                          shapePattern: '.*Background',
-                          fillPattern: '.*',
-                          color:
-                              isDarkMode ? vBackgroundColor : dBackgroundColor,
-                        ),
-                        //* SKIN COLOR
-                        RiveColorComponent(
-                          shapePattern: '.*Skin',
-                          fillPattern: '.*',
-                          strokePattern: '.*',
-                          color: isDarkMode ? vSkinColor : dSkinColor,
-                        ),
-                        //* HAIR COLOR
-                        RiveColorComponent(
-                          shapePattern: '.*Hair',
-                          fillPattern: '.*',
-                          color: isDarkMode ? vHairColor : dHairColor,
-                        ),
-                        //* BANDANA COLOR
-                        RiveColorComponent(
-                          shapePattern: '.*Bandana',
-                          fillPattern: '.*',
-                          color: isDarkMode ? vBandanaColor : dBandanaColor,
-                        ),
-                        //* BANDANA LINES COLOR
-                        RiveColorComponent(
-                          shapePattern: '.*Bandana Lines',
-                          strokePattern: '.*',
-                          color: isDarkMode
-                              ? vBandanaLinesColor
-                              : dBandanaLinesColor,
-                        ),
-                        //* EYEBROW COLOR
-                        RiveColorComponent(
-                          shapePattern: '.*Eyebrow',
-                          strokePattern: '.*',
-                          color: isDarkMode ? vEyebrowColor : dEyebrowColor,
-                        ),
-                        //* EYE COLOR
-                        RiveColorComponent(
-                          shapePattern: '.*Pupil',
-                          fillPattern: '.*',
-                          color: isDarkMode ? vEyeColor : dEyeColor,
-                        ),
-                        //* CLOSED EYE && MOUTH COLOR
-                        RiveColorComponent(
-                          shapePattern: '.*(Eye Closed|Mouth)\$',
-                          strokePattern: '.*',
-                          color: isDarkMode ? vMouthColor : dMouthColor,
-                        ),
-                        //* NOSE COLOR
-                        RiveColorComponent(
-                          shapePattern: '.*Nose',
-                          fillPattern: '.*',
-                          color: isDarkMode ? vNoseColor : dNoseColor,
-                        ),
-                        //* EARRING COLOR
-                        RiveColorComponent(
-                          shapePattern: '.*Earring',
-                          fillPattern: '.*',
-                          color: isDarkMode ? vEarringColor : dEarringColor,
-                        ),
-                        //* OVERALL COLOR
-                        RiveColorComponent(
-                          shapePattern: '.*Overall',
-                          fillPattern: '.*',
-                          color: isDarkMode ? vOverallColor : dOverallColor,
-                        ),
-                        //* POCKET COLOR
-                        RiveColorComponent(
-                          shapePattern: '.*Pocket',
-                          strokePattern: '.*',
-                          color: isDarkMode ? vPocketColor : dPocketColor,
-                        ),
-                        //* BUTTON COLOR
-                        RiveColorComponent(
-                          shapePattern: '.*Button',
-                          fillPattern: '.*',
-                          color: isDarkMode ? vButtonColor : dButtonColor,
-                        ),
-                        //* BUTTON THREAD COLOR
-                        RiveColorComponent(
-                          shapePattern: 'Thread',
-                          strokePattern: '.*',
-                          color: isDarkMode
-                              ? vButtonThreadColor
-                              : dButtonThreadColor,
-                        ),
-                        RiveColorComponent(
-                          shapePattern: 'Thread',
-                          strokePattern: '.*',
-                          color: isDarkMode
-                              ? vButtonThreadColor
-                              : dButtonThreadColor,
-                        ),
-                      ],
+                    child: AspectRatio(
+                      aspectRatio: 1,
+                      child: RiveColorModifier(
+                        artboard: _avatarArtboard!,
+                        components: [
+                          //* BACKGROUND COLOR
+                          RiveColorComponent(
+                            shapePattern: '.*Background',
+                            fillPattern: '.*',
+                            color: isDarkMode
+                                ? vBackgroundColor
+                                : dBackgroundColor,
+                          ),
+                          //* SKIN COLOR
+                          RiveColorComponent(
+                            shapePattern: '.*Skin',
+                            fillPattern: '.*',
+                            strokePattern: '.*',
+                            color: isDarkMode ? vSkinColor : dSkinColor,
+                          ),
+                          //* HAIR COLOR
+                          RiveColorComponent(
+                            shapePattern: '.*Hair',
+                            fillPattern: '.*',
+                            color: isDarkMode ? vHairColor : dHairColor,
+                          ),
+                          //* BANDANA COLOR
+                          RiveColorComponent(
+                            shapePattern: '.*Bandana',
+                            fillPattern: '.*',
+                            color: isDarkMode ? vBandanaColor : dBandanaColor,
+                          ),
+                          //* BANDANA LINES COLOR
+                          RiveColorComponent(
+                            shapePattern: '.*Bandana Lines',
+                            strokePattern: '.*',
+                            color: isDarkMode
+                                ? vBandanaLinesColor
+                                : dBandanaLinesColor,
+                          ),
+                          //* EYEBROW COLOR
+                          RiveColorComponent(
+                            shapePattern: '.*Eyebrow',
+                            strokePattern: '.*',
+                            color: isDarkMode ? vEyebrowColor : dEyebrowColor,
+                          ),
+                          //* EYE COLOR
+                          RiveColorComponent(
+                            shapePattern: '.*Pupil',
+                            fillPattern: '.*',
+                            color: isDarkMode ? vEyeColor : dEyeColor,
+                          ),
+                          //* CLOSED EYE && MOUTH COLOR
+                          RiveColorComponent(
+                            shapePattern: '.*(Eye Closed|Mouth)\$',
+                            strokePattern: '.*',
+                            color: isDarkMode ? vMouthColor : dMouthColor,
+                          ),
+                          //* NOSE COLOR
+                          RiveColorComponent(
+                            shapePattern: '.*Nose',
+                            fillPattern: '.*',
+                            color: isDarkMode ? vNoseColor : dNoseColor,
+                          ),
+                          //* EARRING COLOR
+                          RiveColorComponent(
+                            shapePattern: '.*Earring',
+                            fillPattern: '.*',
+                            color: isDarkMode ? vEarringColor : dEarringColor,
+                          ),
+                          //* OVERALL COLOR
+                          RiveColorComponent(
+                            shapePattern: '.*Overall',
+                            fillPattern: '.*',
+                            color: isDarkMode ? vOverallColor : dOverallColor,
+                          ),
+                          //* POCKET COLOR
+                          RiveColorComponent(
+                            shapePattern: '.*Pocket',
+                            strokePattern: '.*',
+                            color: isDarkMode ? vPocketColor : dPocketColor,
+                          ),
+                          //* BUTTON COLOR
+                          RiveColorComponent(
+                            shapePattern: '.*Button',
+                            fillPattern: '.*',
+                            color: isDarkMode ? vButtonColor : dButtonColor,
+                          ),
+                          //* BUTTON THREAD COLOR
+                          RiveColorComponent(
+                            shapePattern: 'Thread',
+                            strokePattern: '.*',
+                            color: isDarkMode
+                                ? vButtonThreadColor
+                                : dButtonThreadColor,
+                          ),
+                          RiveColorComponent(
+                            shapePattern: 'Thread',
+                            strokePattern: '.*',
+                            color: isDarkMode
+                                ? vButtonThreadColor
+                                : dButtonThreadColor,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
+                  Spacer(),
                   const ThemeSwitcherButton(),
+                  Spacer(flex: 3),
                 ],
               )
             : const Center(
