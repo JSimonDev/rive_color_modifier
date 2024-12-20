@@ -1,3 +1,22 @@
+## 2.2.0
+
+### New Features
+
+- Added several new properties to the `RiveColorModifier` widget:
+  - `useArtboardSize`: Allows the use of the inherent size of the artboard for scaling the animation.
+  - `antialiasing`: Enables or disables antialiasing for the artboard rendering.
+  - `enablePointerEvents`: Enables input listeners on the artboard, allowing interaction.
+  - `cursor`: Specifies the mouse cursor for hover events on the artboard.
+  - `behavior`: Determines how hit testing should behave for the widget.
+  - `clipRect`: Clips the artboard to a specified rectangle, limiting the rendering area.
+  - `speedMultiplier`: Controls the speed of the animation playback.
+  - `isTouchScrollEnabled`: Allows scrolling behavior for touch-enabled devices.
+  
+### Improvements
+
+- Refined `createRenderObject` and `updateRenderObject` to support the new properties for enhanced flexibility.
+- Enhanced user interaction with added pointer events and touch scrolling.
+
 ## 2.1.3
 
 ### Internal Changes
