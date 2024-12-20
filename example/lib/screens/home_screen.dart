@@ -16,17 +16,23 @@ class HomeScreen extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 60),
-              child: Text(
-                'rive_color_modifier',
-                style: textStyles.displaySmall!.copyWith(
-                  fontWeight: FontWeight.bold,
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width,
+                child: FittedBox(
+                  fit: BoxFit.contain,
+                  child: Text(
+                    'rive_color_modifier',
+                    style: textStyles.displaySmall!.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               ),
             ),
             _ExamplePreviewCard(
               title: "Changes color dynamically!",
               description:
-                  'Incididunt sunt laborum ipsum excepteur cillum qui et incididunt incididunt incididunt ipsum eu velit.',
+                  'In this example, you can change the color of the avatar dynamically by tapping on the screen.',
               imageUrl: 'assets/images/colors.jpg',
               onTap: () {
                 Navigator.of(context).push(
@@ -40,7 +46,7 @@ class HomeScreen extends StatelessWidget {
             _ExamplePreviewCard(
               title: "Modify the linear and radial gradients too!",
               description:
-                  'Incididunt sunt laborum ipsum excepteur cillum qui et incididunt incididunt incididunt ipsum eu velit.',
+                  'In this example, you can change the gradient of the avatar dynamically by tapping on the screen.',
               imageUrl: 'assets/images/gradient.jpg',
               onTap: () {
                 Navigator.of(context).push(
@@ -88,6 +94,7 @@ class _ExamplePreviewCard extends StatelessWidget {
         color: colors.surface,
         elevation: 0,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ClipPath(
               clipper: WaveClipper(),
