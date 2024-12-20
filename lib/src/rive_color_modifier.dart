@@ -1,40 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
-
 import 'package:rive_color_modifier/src/rive_color_component.dart';
 import 'package:rive_color_modifier/src/rive_component.dart';
 import 'package:rive_color_modifier/src/rive_custom_render_object.dart';
 
 /// A widget that modifies the colors of a Rive animation.
 class RiveColorModifier extends LeafRenderObjectWidget {
-  final Artboard artboard;
-  final BoxFit fit;
-  final Alignment alignment;
-  final bool useArtboardSize;
-  final bool antialiasing;
-  final bool enablePointerEvents;
-  final MouseCursor cursor;
-  final RiveHitTestBehavior behavior;
-  final Rect? clipRect;
-  final double speedMultiplier;
-  final bool isTouchScrollEnabled;
-  final List<RiveComponent> components;
-
-
-  /// Creates a [RiveColorModifier].
+  /// A widget that displays a Rive artboard with color modification capabilities.
   ///
-  /// The [artboard] is the Rive animation to modify.
-  /// The [fit] determines how the animation is fitted into the widget.
-  /// The [alignment] determines the alignment of the animation within the widget.
-  /// The [useArtboardSize] determines whether to use the inherent size of the [artboard].
-  /// The [antialiasing] enables/disables antialiasing.
-  /// The [enablePointerEvents] enables input listeners on the artboard.
-  /// The [cursor] is the mouse cursor for mouse pointers that are hovering over the region.
-  /// The [behavior] determines how to behave during hit testing.
-  /// The [clipRect] clips the artboard to this rect.
-  /// The [speedMultiplier] is a multiplier for controlling the speed of the Rive animation playback.
-  /// The [isTouchScrollEnabled] allows scrolling behavior on touch-enabled devices.
-  /// The [components] is a list of [RiveColorComponent]s that define the color modifications to apply.
+  /// This widget extends Rive's functionality by allowing dynamic color modifications
+  /// to specific components within the animation.
+  ///
+  /// Parameters:
+  /// * [artboard] - The artboard to display and modify.
+  /// * [fit] - How the artboard should be fitted to its layout bounds.
+  /// * [alignment] - The alignment of the artboard within its bounds.
+  /// * [useArtboardSize] - Whether to use the artboard's dimensions for sizing.
+  /// * [antialiasing] - Whether to enable antialiasing.
+  /// * [enablePointerEvents] - Whether to enable pointer events on the artboard.
+  /// * [cursor] - The mouse cursor to show when hovering over the widget.
+  /// * [behavior] - How to behave during hit testing.
+  /// * [clipRect] - The rectangle used to clip the artboard.
+  /// * [speedMultiplier] - The speed multiplier for the animation.
+  /// * [isTouchScrollEnabled] - Whether touch scrolling is enabled.
+  /// * [components] - List of components to be modified.
   const RiveColorModifier({
     super.key,
     required this.artboard,
@@ -50,6 +39,90 @@ class RiveColorModifier extends LeafRenderObjectWidget {
     this.isTouchScrollEnabled = false,
     this.components = const [],
   });
+
+  /// Artboard used for drawing
+  final Artboard artboard;
+
+  /// Fit for the rendering artboard
+  final BoxFit fit;
+
+  /// Alignment for the rendering artboard
+  final Alignment alignment;
+
+  /// {@template Rive.useArtboardSize}
+  /// Determines whether to use the inherent size of the [artboard], i.e. the
+  /// absolute size defined by the artboard, or size the widget based on the
+  /// available constraints only (sized by parent).
+  ///
+  /// Defaults to `false`, i.e. defaults to sizing based on the available
+  /// constraints instead of the artboard size.
+  ///
+  /// When `true`, the artboard size is constrained by the parent constraints.
+  /// Using the artboard size has the benefit that the widget now has an
+  /// *intrinsic* size.
+  ///
+  /// When `false`, the intrinsic size is `(0, 0)` because
+  /// there is no size intrinsically - it only comes from the parent
+  /// constraints. Consequently, if you intend to use the widget in the subtree
+  /// of an [IntrinsicWidth] or [IntrinsicHeight] widget or intend to directly
+  /// obtain the [RenderBox.getMinIntrinsicWidth] et al., you will want to set
+  /// this to `true`.
+  /// {@endtemplate}
+  final bool useArtboardSize;
+
+  /// Enables/disables antialiasing
+  final bool antialiasing;
+
+  /// Enable input listeners (such as hover, pointer down, etc.) on the
+  /// artboard.
+  ///
+  /// Default `false`.
+  final bool enablePointerEvents;
+
+  /// The mouse cursor for mouse pointers that are hovering over the region.
+  ///
+  /// When a mouse enters the region, its cursor will be changed to the
+  /// [cursor]. When the mouse leaves the region, the cursor will be decided by
+  /// the region found at the new location.
+  ///
+  /// The [cursor] defaults to [MouseCursor.defer], deferring the choice of
+  /// cursor to the next region behind it in hit-test order.
+  final MouseCursor cursor;
+
+  /// {@template Rive.behavior}
+  /// How to behave during hit testing to consider targets behind this
+  /// animation.
+  ///
+  /// Defaults to [RiveHitTestBehavior.opaque].
+  ///
+  /// See [RiveHitTestBehavior] for the allowed values and their meanings.
+  /// {@endtemplate}
+  final RiveHitTestBehavior behavior;
+
+  /// {@template Rive.clipRect}
+  /// Clip the artboard to this rect.
+  ///
+  /// If not supplied it'll default to the constraint size provided by the
+  /// parent widget. Unless the [Artboard] has clipping disabled, then no
+  /// clip will be applied.
+  /// {@endtemplate}
+  final Rect? clipRect;
+
+  /// A multiplier for controlling the speed of the Rive animation playback.
+  ///
+  /// Default `1.0`.
+  final double speedMultiplier;
+
+  /// For Rive Listeners, allows scrolling behavior to still occur on Rive
+  /// widgets when a touch/drag action is performed on touch-enabled devices.
+  /// Otherwise, scroll behavior may be prevented on touch/drag actions on the
+  /// widget by default.
+  ///
+  /// Default `false`.
+  final bool isTouchScrollEnabled;
+
+  /// A list of [RiveColorComponent]s that define the color modifications to apply.
+  final List<RiveComponent> components;
 
   /// Creates a render object for the RiveColorModifier widget.
   ///
