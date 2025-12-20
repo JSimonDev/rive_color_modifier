@@ -1,8 +1,6 @@
 name: rive_color_modifier
-description: "An easy and straightforward way to modify the Color of specific
-  Components within Rive Animations at runtime, while also maintaining their
-  opacity throughout the animation."
-version: 2.2.0
+description: "[DEPRECATED] An easy way to modify Color of components in Rive Animations. For Rive Flutter >= 0.14.0, use official Data Binding."
+version: 2.3.0
 homepage: https://jsimon.dev
 repository: https://github.com/JSimonDev/rive_color_modifier
 issue_tracker: https://github.com/JSimonDev/rive_color_modifier/issues

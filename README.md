@@ -1,5 +1,21 @@
 # Rive Color Modifier
 
+> [!CAUTION] DEPRECATED: This package effectively became obsolete with the release of Rive Flutter `0.14.0` and the introduction of the official Data Binding API.
+>
+> Changes in Rive Flutter `^0.14.0`:
+>
+> - Switches to the native C++ runtime.
+> - Introduces official Data Binding support.
+>
+> **Migration Guide**:
+> If you are using Rive Flutter `^0.14.0` or later, please migrate to the official Data Binding approach.
+>
+> - [Flutter runtime for Rive Documentation](https://rive.app/docs/runtimes/flutter/flutter)
+> - [Migration Guide](https://rive.app/docs/runtimes/flutter/migration-guide)
+> - [Data Binding Documentation](https://rive.app/docs/runtimes/data-binding)
+>
+> This package will remain available for legacy projects using older versions of the Rive Flutter runtime.
+
 This package provides an easy and straightforward way to modify the Color of specific Components within [Rive](https://rive.app/) Animations at runtime, while also maintaining their opacity (alpha values) throughout the animation.
 
 ## Demo
@@ -11,7 +27,7 @@ This package provides an easy and straightforward way to modify the Color of spe
 ### Important Notes
 
 1. **Exporting Names**: When exporting your Rive file, make sure to enable the "Export Options -> Export all names" setting. This is crucial for the package to function correctly.
-![Export All Names](https://github.com/user-attachments/assets/9ed2870c-7dce-479d-9af8-f69fddab4c15)
+   ![Export All Names](https://github.com/user-attachments/assets/9ed2870c-7dce-479d-9af8-f69fddab4c15)
 
 2. **Rive Pro vs. No Pro**: There are some limitations when using the runtime export version of Rive files, particularly for changing the colors of certain elements like Strokes and Fills. To get full functionality, it might be necessary to use the backup export option, which is a Rive Pro feature. The issue at hand is that since [version v0.8.1440](https://rive.app/changelog/export-object-name-options) of the Rive editor, the option to not export object names was enabled to reduce file size. This causes a problem where only the names of Shapes are exported, but not the names of the elements they contain, such as Fills and Strokes. I am exploring effective solutions for non-Pro users so that the package can still be used with the names of fills and strokes.
 3. **Gradients Support**: As of version 2.1.1, this package now supports changing both linear and radial gradients using the new RiveGradientComponent widget.

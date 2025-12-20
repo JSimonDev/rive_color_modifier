@@ -1,3 +1,8 @@
+## 2.3.0
+
+- **DEPRECATED**: This package is now deprecated in favor of the official Rive Data Binding API introduced in Rive Flutter `0.14.0`.
+- Documentation updated to include a migration guide.
+
 ## 2.2.0
 
 ### New Features
@@ -11,7 +16,7 @@
   - `clipRect`: Clips the artboard to a specified rectangle, limiting the rendering area.
   - `speedMultiplier`: Controls the speed of the animation playback.
   - `isTouchScrollEnabled`: Allows scrolling behavior for touch-enabled devices.
-  
+
 ### Improvements
 
 - Refined `createRenderObject` and `updateRenderObject` to support the new properties for enhanced flexibility.
