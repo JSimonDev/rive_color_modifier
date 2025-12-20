@@ -1,3 +1,7 @@
+## 2.3.1
+
+- Fixed README formatting for better compatibility with pub.dev.
+
 ## 2.3.0
 
 - **DEPRECATED**: This package is now deprecated in favor of the official Rive Data Binding API introduced in Rive Flutter `0.14.0`.

@@ -1,13 +1,17 @@
-# Rive Color Modifier
+# Rive Color Modifier [![Deprecated](https://img.shields.io/badge/status-deprecated-red)](https://pub.dev/packages/rive_color_modifier)
 
-> [!CAUTION] DEPRECATED: This package effectively became obsolete with the release of Rive Flutter `0.14.0` and the introduction of the official Data Binding API.
+> ### ⚠️ Obsolete Package
 >
-> Changes in Rive Flutter `^0.14.0`:
+> **This package is now obsolete due to the release of Rive Flutter `0.14.0` and the introduction of official Data Binding support.**
+>
+> ---
+>
+> **Changes in Rive Flutter `^0.14.0`:**
 >
 > - Switches to the native C++ runtime.
 > - Introduces official Data Binding support.
 >
-> **Migration Guide**:
+> **Migration Guide:**
 > If you are using Rive Flutter `^0.14.0` or later, please migrate to the official Data Binding approach.
 >
 > - [Flutter runtime for Rive Documentation](https://rive.app/docs/runtimes/flutter/flutter)
